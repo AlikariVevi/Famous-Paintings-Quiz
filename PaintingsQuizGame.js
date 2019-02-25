@@ -12,16 +12,16 @@ var totalPaintings = {
 }
 
 var totalPainters = {
-"blackpainter":"black",
-"whitepainter":"white",
-"redpainter":"red",
-"bluepainter":"blue",
-"greenpainter":"green",
-"orangepaintere":"orange",
-"purplepainter":"purple",
-"cadetbluepainter":"cadetblue",
-"dimgraypainter":"dimgray",
-"lightsalmonpainter":"lightsalmon"
+"blac":"blackpainter",
+"white":"whitepainter",
+"red":"redpainter",
+"blue":"bluepainter",
+"green":"greenpainter",
+"orange":"orangepainter",
+"purple":"purplepainter",
+"cadetblue":"cadetbluepainter",
+"dimgrayr":"dimgraypainter",
+"lightsalmon":"lightsalmonpainter"
 }
 var backgroundColor = "rgb(39, 34, 48)";
 var holders = document.querySelectorAll(".holder");
