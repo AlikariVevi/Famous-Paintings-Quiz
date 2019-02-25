@@ -1,35 +1,28 @@
 var totalPaintings = {
-"url(\"paintings/Vincent-Van-Gogh/Starry-Night.jpg\")":"Starry Night",
-"url(\"paintings/The-Birth-of-Venus.jpg\")":"The Birth Of Venus",
-"url(\"paintings/The-Persistence-of-Memory.jpg\")":"The Persistence of Memory",
-"url(\"paintings/the-creation-of-adam.jpg\")":"The Creation Of Adam",
-"url(\"paintings/Guernica.jpg\")":"Guernica",
-"url(\"paintings/night-watch.jpg\")":"Night Watch",
-"url(\"paintings/autumn_rhythm.jpg\")":"Autumn Rhythm",
-"url(\"paintings/Water-Lilies.jpg\")":"Water Lilies",
-"url(\"paintings/Bain-a-la-Grenouillere.jpg\")":"Bain a la Grenouillere",
-"url(\"paintings/the-Raft-of-the-Medusa.jpg\")":"The Raft Of The Medusa",
-// "url(\"paintings/Vincent-Van-Gogh/night_cafe.jpg\")":"The Night Cafe",
-// "url(\"paintings/Vincent-Van-Gogh/starry_night_rhone.jpg\")":"Starry Night Over the Rhone",
-// "url(\"paintings/Vincent-Van-Gogh/bedroom.jpg\")":"Bedroom"
+"blackname":"black",
+"whitename":"white",
+"redname":"red",
+"bluename":"blue",
+"greenname":"green",
+"orangename":"orange",
+"purplename":"purple",
+"cadetbluename":"cadetblue",
+"dimgrayname":"dimgray",
+"lightsalmonname":"lightsalmon"
 }
 
 var totalPainters = {
-"url(\"paintings/Vincent-Van-Gogh/Starry-Night.jpg\")":"Vincent van Gogh",
-// "url(\"paintings/night_cafe.jpg\")":"Vincent van Gogh",
-// "url(\"paintings/starry_night_rhone.jpg\")":"Vincent van Gogh",
-// "url(\"paintings/bedroom.jpg\")":"Vincent van Gogh",
-"url(\"paintings/The-Birth-of-Venus.jpg\")":"Sandro Botticelli",
-"url(\"paintings/The-Persistence-of-Memory.jpg\")":"Salvador Dali",
-"url(\"paintings/the-creation-of-adam.jpg\")":"Michelangelo",
-"url(\"paintings/Guernica.jpg\")":"Pablo Picasso",
-"url(\"paintings/night-watch.jpg\")":"Rembrandt",
-"url(\"paintings/autumn_rhythm.jpg\")":"Jackson Pollock",
-// "url(\"paintings/Water-Lilies.jpg\")":"Claude Monet",
-"url(\"paintings/Bain-a-la-Grenouillere.jpg\")":"Claude Monet",
-"url(\"paintings/the-Raft-of-the-Medusa.jpg\")":"Theodore Gericault"
+"blackpainter":"black",
+"whitepainter":"white",
+"redpainter":"red",
+"bluepainter":"blue",
+"greenpainter":"green",
+"orangepaintere":"orange",
+"purplepainter":"purple",
+"cadetbluepainter":"cadetblue",
+"dimgraypainter":"dimgray",
+"lightsalmonpainter":"lightsalmon"
 }
-
 var backgroundColor = "rgb(39, 34, 48)";
 var holders = document.querySelectorAll(".holder");
 var messageDisplay = document.querySelector("#message");
