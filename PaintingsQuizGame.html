@@ -1,403 +1,102 @@
-// /////////////////////////////////////////////////////////// //
+<!-- // /////////////////////////////////////////////////////////// //
 // /////////////////////////////////////////////////////////// //
 // ////////////     QUIZ GAME WITH PAINTINGS      //////////// //
 // /////////////////////////////////////////////////////////// //
 // /////////////////////////////////////////////////////////// //
 
-
-// dictionarys d={"a":["aa","aaa","aaaa",...], "b":["bb","bbb",...],...}
-
-var totalPaintings = {
-// Vincent van Gogh
-"Starry Night":["url(\"paintings/Starry-Night.jpg\")"],
-"The Night Cafe":["url(\"paintings/night_cafe.jpg\")"],
-"Starry Night Over the Rhone":["url(\"paintings/starry_night_rhone.jpg\")"],
-"Bedroom":["url(\"paintings/bedroom.jpg\")"],
-// Sandro Botticelli
-"The Birth Of Venus":["url(\"paintings/The-Birth-of-Venus.jpg\")"],
-"La Primavera":["url(\"paintings/La_Primavera.jpg\")"],
-"Adoration of The Magi":["url(\"paintings/Adoration_of_the_Magi.jpg\")"],
-"Venus and Mars":["url(\"paintings/Venus_and_Mars.jpg\")"],
-// Salvador Dali
-"The Persistence of Memory":["url(\"paintings/The-Persistence-of-Memory.jpg\")"],
-"Butterfly in Book":["url(\"paintings/butterfly-in-book.jpg\")"],
-"Three Sphinxes of Bikini":["url(\"paintings/three-sphinxes-of-bikini.jpg\")"],
-"Swans Reflecting Elephants":["url(\"paintings/Swans_Reflecting.jpg\")"],
-// Huang Gongwang
-"Dwelling in the Fuchun Mountains":["url(\"paintings/Dwelling-in-the-Fuchun-Mountains.jpg\")"],
-"Clearing After Sudden Snow":["url(\"paintings/Clearing_After_Sudden_Snow.jpg\")"],
-"Nine Pearl Peaks":["url(\"paintings/Nine-Pearl-Peaks.jpg\")"],
-// Pablo Picasso
-"Guernica":["url(\"paintings/Guernica.jpg\")"],
-"The Kitchen":["url(\"paintings/the-kitchen.jpg\")"],
-"Mediterranean Landscape":["url(\"paintings/mediterranean-landscape.jpg\")"],
-"Les Demoiselles d\'Avignon":["url(\"paintings/avignon.jpg\")"],
-// Rembrandt
-"Night Watch":["url(\"paintings/night-watch.jpg\")"],
-//Katsushika Hokusai 
-"The Great Wave off Kanagawa":["url(\"paintings/The-Great-Wave-off-Kanagawa.jpg\")"],
-"Mount Fuji Behind Cherry Trees And Flowers ":["url(\"paintings/mount-fuji-behind-cherry-trees-and-flowers.jpg\")"],
-"Fly Fishing":["url(\"paintings/fly-fishing.jpg\")"],
-// Utamaro
-"Moonlight Revelry at Dozo Sagami":["url(\"paintings/Moonlight_Revelry_at_Dozo_Sagami.jpg\")"],
-"Moonlight Revelry at Dozo Sagami":["url(\"paintings/Hideyoshi_and_his_Five_Wives_Viewing_the_Cherry-blossoms_at_Higashiyama.jpg\")"],
-// Jackson Pollock
-"Autumn Rhythm":["url(\"paintings/autumn_rhythm.jpg\")"],
-"The She-Wolf":["url(\"paintings/the-she-wolf.jpg\")"],
-"Lavender Mist":["url(\"paintings/lavender-mist.jpg\")"],
-"Convergence":["url(\"paintings/convergence.jpg\")"],
-// Claude Mon
-"Water Lilies":["url(\"paintings/Water-Lilies.jpg\")"],
-"La Grenouillere":["url(\"paintings/Bain-a-la-Grenouillere.jpg\")"],
-"Le Bateau-atelier":["url(\"paintings/Le-Bateau-atelier.jpg\")"],
-"Le Pont Neuf":["url(\"paintings/Le_Pont_Neuf.jpg\")"],
-// Theodore Gericault
-"The Raft Of The Medusa":["url(\"paintings/the-Raft-of-the-Medusa.jpg\")"]
-}
+ -->
 
 
-var totalPainters = {
-"Vincent van Gogh":["url(\"paintings/Starry-Night.jpg\")","url(\"paintings/night_cafe.jpg\")","url(\"paintings/starry_night_rhone.jpg\")","url(\"paintings/bedroom.jpg\")"],
-"Sandro Botticelli":["url(\"paintings/The-Birth-of-Venus.jpg\")","url(\"paintings/La_Primavera.jpg\")","url(\"paintings/Venus_and_Mars.jpg\")","url(\"paintings/Adoration_of_the_Magi.jpg\")"],
-"Salvador Dali":["url(\"paintings/The-Persistence-of-Memory.jpg\")","url(\"paintings/butterfly-in-book.jpg\")","url(\"paintings/three-sphinxes-of-bikini.jpg\")","url(\"paintings/Swans_Reflecting.jpg\")"],
-"Huang Gongwang":["url(\"paintings/Dwelling-in-the-Fuchun-Mountains.jpg\")","url(\"paintings/Clearing_After_Sudden_Snow.jpg\")","url(\"paintings/Nine-Pearl-Peaks.jpg\")"],
-"Pablo Picasso":["url(\"paintings/Guernica.jpg\")","url(\"paintings/the-kitchen.jpg\")","url(\"paintings/mediterranean-landscape.jpg\")","url(\"paintings/avignon.jpg\")"],
-"Rembrandt":["url(\"paintings/night-watch.jpg\")"],
-"Utamaro":["url(\"paintings/Moonlight_Revelry_at_Dozo_Sagami.jpg\")","url(\"paintings/Hideyoshi_and_his_Five_Wives_Viewing_the_Cherry-blossoms_at_Higashiyama.jpg\")"],
-"Katsushika Hokusai ":["url(\"paintings/The-Great-Wave-off-Kanagawa.jpg\")","url(\"paintings/mount-fuji-behind-cherry-trees-and-flowers.jpg\")","url(\"paintings/fly-fishing.jpg\")"],
-"Jackson Pollock":["url(\"paintings/autumn_rhythm.jpg\")","url(\"paintings/the-she-wolf.jpg\")","url(\"paintings/lavender-mist.jpg\")","url(\"paintings/convergence.jpg\")"],
-"Claude Monet":["url(\"paintings/Bain-a-la-Grenouillere.jpg\")","url(\"paintings/Water-Lilies.jpg\")","url(\"paintings/Le-Bateau-atelier.jpg\")","url(\"paintings/Le_Pont_Neuf.jpg\")"],
-"Theodore Gericault":["url(\"paintings/the-Raft-of-the-Medusa.jpg\")"]
-}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PaintingsQuizGame</title>
 
-// \\\\\\\\\\\\\\\\\ //
-// GLOBAL VARIABLES  //
-// ///////////////// //
-var backgroundColor = "rgb(39, 34, 48)";
-var holders = document.querySelectorAll(".holder");
-var messageDisplay = document.querySelectorAll(".message");
+	<!--------------------------------->
+	<!--           CSS               -->
+	<!--------------------------------->
 
-var easy = document.querySelector("#easy");
-var medium = document.querySelector("#medium");
-var hard = document.querySelector("#hard");
-
-var difficultyList = [3,6,9];
-var gameModeList = [totalPaintings,totalPainters];
-
-var gameMode = gameModeList[0]
-
-
-// ////////////////////
-// BUTTONS //
-// reset Game Button
-var resetButton = document.querySelector("#reset");
-//toggle paintings and painters BUtton
-var toggleButton  = document.querySelector("#TogglePP");
-// Toggle button (Paintings/Painters) 
-// reset Game with Toggle button(Paintings/Painters) 
-toggleButton.addEventListener("click",function(){
-	if(this.classList.contains("images")){
-		this.classList.remove("images");
-		this.classList.add("painters")
-		this.textContent = "painters";
-		Reset(holders,difficultyList,gameModeList[1]);
-	}else if(
-	// reset Game with Toggle(Paintings/Painters)	this.classList.remove("painters");
-		this.classList.contains("painters")){
-		this.classList.remove("painters");
-		this.classList.add("images")
-		this.textContent = "Paintings";
-		Reset(holders,difficultyList,gameModeList[0]);
-	}
-});
-// NewPaintings/NewGame Button
-// reset Game with Button NewPaintings/NewGame 
-resetButton.addEventListener("click",function(){
-	ResetMode(holders,gameModeList,toggleButton)
-	}
-);
-
-function ResetMode(holders,gameModeList,toggleButton){
-	if(toggleButton.classList.contains("images")){
-		Reset(holders,difficultyList,gameModeList[0]);
-	}else if(toggleButton.classList.contains("painters")){
-		Reset(holders,difficultyList,gameModeList[1]);
-	}
-}
-
-var paintingsBar  = document.querySelector("#paintingsBar");
-paintingsBar.addEventListener("click",function(){
-	toggleButton.classList.remove("painters");
-	toggleButton.classList.add("images")
-	toggleButton.textContent =  "Paintings";
-	Reset(holders,difficultyList,gameModeList[0]);
+	<!--Bootstrap link-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!--Custom CSS-->
+	<link rel = "stylesheet" type = "text/css" href = "PaintingsQuizGame.css">
+	<!-- Font Aswesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<!--FONTS-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 	
-})
-
-
-var paintersBar  = document.querySelector("#paintersBar");
-paintersBar.addEventListener("click",function(){
-	toggleButton.classList.remove("images");
-	toggleButton.classList.add("painters")
-	toggleButton.textContent = "painters";
-	Reset(holders,difficultyList,gameModeList[1]);
-})
-
-Difficulty(difficultyList,holders);
-NewGame(difficultyList[1],gameMode)
-
-///////////////////////
-// \\\\\\\\\\\\\\\\\ //
-//     FUNCTIONS     //
-// ///////////////// //
-///////////////////////
-
-/////////////////////
-//  RESET FUNCTION //
-/////////////////////
-// inout
-	// holders -> containers
-	// difficultyList -> list of numbers
-	// gameMode -> object(dictionary) 
-		// mode paintings
-		// mode painters
-// Global variables
-	//  easy
-	//  medium 
-	//  hard
-function Reset(holders,difficultyList,gameMode){
-	CleanHolders(holders);
-	messageDisplay[0].textContent = "";
-	messageDisplay[1].textContent = "Chooce one correct painting";
-	// restebuttin message
-	resetButton.textContent = "New Paintings"
-	if(easy.classList.contains("selected")){
-		NewGame(difficultyList[0],gameMode)
-	}else if(medium.classList.contains("selected")){
-		NewGame(difficultyList[1],gameMode)
-	}else if(hard.classList.contains("selected")){
-		NewGame(difficultyList[2],gameMode)
-	}
-
-};
-
-
-// CLEAR PAINTINGS HOLDERS
-// input hol -> container
-function CleanHolders(hol){
-	for (var i = 0; i < 9; i++){
-		// delete the painting
-		hol[i].style.backgroundSize = "100% 100%";
-		hol[i].style.background = backgroundColor ;
-	}
-	};
-///////////////////////////////////////////////////////
-// CHANGING DIFFICULTY with Buttons Easy/Medium/Hard //
-///////////////////////////////////////////////////////
-// Global variables
-	// var easy = document.querySelector("#easy");
-	// var medium = document.querySelector("#medium");
-	// var hard = document.querySelector("#hard");
-function Difficulty(self,holders){
-	easy.addEventListener("click",function(){
-		easy.classList.add("selected");
-		medium.classList.remove("selected");
-		hard.classList.remove("selected");
-		// restebuttin message
-		resetButton.textContent = "New Paintings"
-		CleanHolders(holders);
-		if(toggleButton.classList.contains("images")){
-			NewGame(self[0],gameModeList[0]);
-		}else if(toggleButton.classList.contains("painters")){
-			NewGame(self[0],gameModeList[1]);
-		}
-	})
-	medium.addEventListener("click",function(){
-		easy.classList.remove("selected");
-		medium.classList.add("selected");
-		hard.classList.remove("selected");
-		// restebuttin message
-		resetButton.textContent = "New Paintings"
-		CleanHolders(holders);
-		if(toggleButton.classList.contains("images")){
-			NewGame(self[1],gameModeList[0]);
-		}else if(toggleButton.classList.contains("painters")){
-			NewGame(self[1],gameModeList[1]);
-		}
-	})		
-	hard.addEventListener("click",function(){
-		easy.classList.remove("selected");
-		medium.classList.remove("selected");
-		hard.classList.add("selected");
-		// restebuttin message
-		resetButton.textContent = "New Paintings"
-		CleanHolders(holders);
-		if(toggleButton.classList.contains("images")){
-			NewGame(self[2],gameModeList[0]);
-		}else if(toggleButton.classList.contains("painters")){
-			NewGame(self[2],gameModeList[1]);
-		}
-	})
-}
-
-//////////////
-// NEW GAME //
-//////////////
-// Global variables
-	// totalPaintings
-// input 
-	// difficulty -> numbers
-	// total -> object(dictionary)
-function NewGame(difficulty,total){
-
-	QuestionMessage(total);
-
-	paintingNames = Object.keys(total);
-	paintingImages = Object.values(total);
-
-	// creating a list with difficulty number of objects
-	Names = generatePaintings(difficulty,paintingNames);
+</head>
+<body>
+	<!--------    NAVBAR    -------->
 	
-	// 
-	paintings = SelectedPaintings(Names);
+	<nav id="mainNavbar" class="navbar container-fluid fixed-top py-1 justify-content-between">
+		<!--collapse button-->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks" aria-controls="navbarLinks" aria-label="Toggler navigation">
+	    <span class="far fa-image"><span id="navNewPaintings" class="pl-2">New Paintings</span></span>
+	  	</button>
 
-	// key of painting
-	correctAnswer = pickOneOfMany(Object.keys(paintings));//name of painying/painter
-	
+		<div id="scrollNav"  class = "navbar-item" >
+		</div>
 
-	// value of painying
-	correctAnswerImage = paintings[correctAnswer];
-
-	paintingName = document.querySelector("#paintingName");
-	paintingName.textContent = correctAnswer;
-	
-	scrollNav = document.querySelector("#scrollNav");
-	scrollNav.textContent = correctAnswer;
-
-	loadPaintings(holders,paintings);
-	
-	// Question Message
-	// input total -> object(dictionary)
-	function QuestionMessage(total){
-	if(total===totalPaintings){
-		document.querySelector("#Question").textContent = "Which one is named  "
-	} else if(total===totalPainters){
-		document.querySelector("#Question").textContent = "Which one was painted by  "
-	}
-	};
-	
-	// Greating new List from the Choocen Paintings
-	// input Names -> list
-	// globel  variable -> total 
-	function SelectedPaintings(Names){
-		temp=[]
-		for (var i = 0; i < Names.length; i++) {
-			OneOfMany = pickOneOfMany(total[Names[i]]);
-			temp.push([Names[i], OneOfMany])
-		}
-		Object.fromEntries = arr => Object.assign({}, ...Array.from(arr, ([k, v]) => ({[k]: v}) ));
-		return Object.fromEntries(temp)
-	}
-
-	// Load paintings to holders
-	// input
-		// self -> list
-		//  obj -> object(dictionary)
-	function loadPaintings(self,obj){
-		var tempValues = Object.values(obj);
-		var tempLength = Object.values(obj).length;
-		// var tempKey = Object.key(obj);
-		// loop through all paintingHolders
-		for (var i = 0; i < tempLength; i++){
-			// sizing paintings
-			self[i].style.backgroundSize = "100% 100%";
-			// insert paintings
-		 	self[i].style.backgroundImage = tempValues[i];
-			// check the answer with the value
-			self[i].addEventListener("click",function(){paintingChoice(this)});
-		}
-			
+		<div id="message1" class="message navbar-item pr-5">  </div>
 		
-	};
+		<div id="navbarLinks" class = "collapse navbar-collapse ">
+			<ul class = "navbar-nav text-left">
+				<li  class = "navbar-item mr-2 ml-1">
+					<button id="paintingsBar" class="navBarBUttons" data-toggle="collapse" data-target=".navbar-collapse.show" >Paintings</button>
+				</li>
+				<li>
+					<button id="paintersBar" class="navBarBUttons" data-toggle="collapse" data-target=".navbar-collapse.show" >Painters</button>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!---------     GAME     ---------->
+	<section class="container-fluid">	<!-- <div  class="container-fluid"> -->
+			<h1>
+				<span id="Question"></span> 
+				<br>
+				<span id="paintingName"> </span>
+				<br>
+				<button id="TogglePP" class="images">Paintings</button>
+			</h1>
+
+		<div id="stripe" class="container-fluid ">
+			<button id="reset">New Paintings</button>
+			<span id="message2" class="message"> Chooce the correct painting </span>
+			<div id="difBut">
+				<button id="easy">Easy</button>
+				<button id="medium" class="selected">Medium</button>
+				<button id="hard">Hard</button>
+			</div>
+		</div>
+		<div id="holderContainer" class="container-fluid">
+			<div class="holder float-none float-md-left"></div>
+			<div class="holder float-none float-md-left"></div>
+			<div class="holder float-none float-md-left"></div>
+			<div class="holder float-none float-md-left"></div>
+			<div class="holder float-none float-md-left"></div>
+			<div class="holder float-none float-md-left"></div>
+			<div class="holder float-none float-md-left"></div>
+			<div class="holder float-none float-md-left"></div>
+			<div class="holder float-none float-md-left"></div>
+		</div>
+	</section>
 	
-	// Checking if palyer's choice is correct
-	// input
-		// self -> holder/container/div/area
-		// global var -> correctAnswerImage
-	function paintingChoice(self){
-		// the given answer with the value value
-		var clickedPainting = self.style.backgroundImage;
-		// check if it is correct
-		if(clickedPainting==correctAnswerImage){
-			for(var j=0;j< messageDisplay.length;j++){
-				messageDisplay[j].textContent = "Correct!";
-				}
-			changePainting(correctAnswerImage);
-			resetButton.textContent = "Play Again";
-			// // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			// // crashes after few renewals
-			// // 
-			// setTimeout(function(){ResetMode(holders,gameModeList,toggleButton)},2000);
 
-		} else{
-			self.style.background = backgroundColor ;
-			for(var j=0;j< messageDisplay.length;j++){
-				messageDisplay[j].textContent = "Try Again";
-				}
-		};
-	};
-
-	// All holders load with the same Image
-	// input self -> image
-	function changePainting(self){
-		// loop through all paintingHolders
-		for (var i = 0; i < Object.keys(paintings).length; i++){
-			// change the painting
-			holders[i].style.backgroundSize = "100% 100%";
-			holders[i].style.backgroundImage= self;
-		}
-
-	};
-
-	// radon select from a list
-	// input self -> list
-	function pickOneOfMany(self){
-		var rad = Math.floor(Math.random()*self.length);
-		return self[rad];
-	};
-
-	// rando, choice from a list
-	// input 
-		// num -> integer
-		// TotalArray -> list
-	function generatePaintings(num,TotalArray){
-		//make array
-		var arr = [] 
-		// add num paintings
-		for (var i = 0; i < num; i++) {
-			//get random painting and add to array
-			var rad = Math.floor(Math.random()*TotalArray.length);
-			arr[i] = TotalArray[rad];
-		}
-		//return array
-		return arr
-	};
-
-}
-
-// // var mainNav = document.querySelector("#scrollNav");
-// // window.addEventListener("scroll",function(){toggleClass(mainNav,"d-none")});
-// // function toggleClass(self,className){
-// // 	if(window.body.scrollTop>50){
-// // 		// self.classList.toggle("className")
-// // 		alert("fff")
-// // 	}
-// // }
-// // ScrollNavBar();
-// $(function(){
-// 	$(document).scroll(function(){
-// 		var scrollNav = $("#scrollNan");
-// 		scrollNav.toggleClass("d-none",$(this).scrollTop() > 100);
-// 	} 
-// 		)
-// });
+	<!-------     Contact      -------->
+	<section class="container-fluid text-right">
+	<a id="contact" href="mailto:par.alikari@gmail.com">created by Vevi Alikari</a>
+	</section>
+	<!--------------------------------->
+	<!--        JavaScript           -->
+	<!--------------------------------->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<!--------------------------------->	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<!--------------------------------->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!----------   CUSTOM  ------------>
+	<script src = "PaintingsQuizGame.js"></script>
+</body>
+</html>
